@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Светлый фон */
+            color: #333; /* Темный текст для контраста */
+            text-align: center; /* Центрирование текста */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Занимает всю высоту окна */
+            padding: 20px;
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #555; /* Цвет текста */
+            max-width: 90%; /* Ограничение ширины сообщения */
+        }
+
+        .gif {
+            max-width: 100%;
+            height: auto; /* Адаптивный размер */
+        }
+
+        .return-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .return-message a {
+            color: #007BFF; /* Цвет ссылки */
+            text-decoration: none; /* Без подчеркивания */
+        }
+
+        .return-message a:hover {
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
+        /* Медиа-запросы */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .message {
+                font-size: 1.2em; /* Уменьшение размера шрифта для планшетов и мобильных устройств */
+                margin: 15px; /* Уменьшение отступов */
+            }
+
+            .return-message {
+                font-size: 1em; /* Уменьшение размера шрифта для планшетов и мобильных устройств */
+                margin-top: 15px; /* Уменьшение отступов */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .message {
+                font-size: 1em; /* Дополнительное уменьшение размера шрифта для маленьких экранов */
+                margin: 10px; /* Уменьшение отступов */
+            }
+
+            .return-message {
+                font-size: 0.9em; /* Дополнительное уменьшение размера шрифта для маленьких экранов */
+                margin-top: 10px; /* Уменьшение отступов */
+            }
+
+            .gif {
+                max-width: 90%; /* Ограничение ширины изображения */
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                padding: 5px;
+            }
+
+            .message {
+                font-size: 0.9em; /* Дополнительное уменьшение размера шрифта для очень маленьких экранов */
+                margin: 5px; /* Уменьшение отступов */
+            }
+
+            .return-message {
+                font-size: 0.8em; /* Дополнительное уменьшение размера шрифта для очень маленьких экранов */
+                margin-top: 5px; /* Уменьшение отступов */
+            }
+
+            .gif {
+                max-width: 80%; /* Ограничение ширины изображения */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="message">This page is under construction. We are working hard to bring it to you soon!</p>
+    <img src="../assets/file/programming.gif" alt="Programmer coding" class="gif">
+    <p class="return-message">Please <a href="javascript:history.back()">return to the previous page</a>.</p>
+</div>
+</body>
+</html>
