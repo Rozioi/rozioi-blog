@@ -9,7 +9,6 @@ function translatePage(language) {
     document.querySelector('header a[href="./blog.html"]').textContent = translations[language].blog;
     document.querySelector('header a[href="./projects.html"]').textContent = translations[language].projects_header;
     document.querySelector('header a[href="./about.html"]').textContent = translations[language].aboutMe;
-    document.querySelector('header a[href="#contact"]').textContent = translations[language].contact;
     const projects = translations[language].projects;
     const projectElements = document.querySelectorAll('.project');
 

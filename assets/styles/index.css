@@ -85,26 +85,28 @@ body.loaded #loader {
     display: none;
 }
 
+
 header {
     position: fixed;
+    top: 0; /* Обеспечивает, что header всегда остается вверху */
+    left: 0;
     height: 70px;
-    width: 100vw;
-    background-color: #B9B9B9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    background-color: #333; /* Тёмный фон для шапки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 22px;
     font-family: 'InterBold', sans-serif;
-    margin-bottom: 0;
     z-index: 999;
 }
 
 /* Стили для ссылок в header */
 header a {
     text-decoration: none;
-    transition: .5s;
-    color: white;
+    transition: 0.5s;
+    color: #e0e0e0;
     padding: 0 15px; /* Добавляет отступы вокруг текста */
 }
 
@@ -121,19 +123,6 @@ header a:hover {
 }
 
 
-header *:first-child {
-    margin-left: 20px; /* Добавляем отступ от левого края, если нужно */
-}
-header *:nth-child(2){
-    margin-left: auto; /* Сдвигаем остальные элементы к правому краю */
-
-}
-
-header *:not(:first-child) {
-    margin-right: 80px; /* Добавляем отступ от правого края, если нужно */
-}
-
-
 header::before {
     content: "";
     position: absolute;
@@ -146,11 +135,9 @@ header::before {
 }
 
 header > * {
-
     position: relative;
     z-index: 2;
 }
-
 #start-view {
     margin-top: 70px;
     position: relative;
@@ -555,212 +542,81 @@ button:active {
 
 
 /* Общие стили для мобильных устройств */
-@media screen and (max-width: 767px) {
+
+@media (max-width: 768px) {
     header {
-        font-size: 18px; /* Уменьшаем размер шрифта в шапке */
-        height: 60px; /* Уменьшаем высоту шапки */
+        font-size: 1.2rem;
+        height: auto;
+        padding: 0.5rem;
     }
 
     header a {
-        font-size: 16px; /* Уменьшаем размер шрифта в ссылках */
-    }
-
-    #start-view {
-        height: 70vh; /* Уменьшаем высоту стартового экрана */
-        background-size: cover; /* Сохраняем покрытие фона */
+        padding: 0 0.5rem;
     }
 
     .greeting p:first-child {
-        font-size: 28px; /* Уменьшаем размер шрифта для первого абзаца */
-        letter-spacing: 10px; /* Уменьшаем межбуквенный интервал */
+        font-size: 2rem;
     }
 
     .greeting p:not(:first-child) {
-        font-size: 18px; /* Уменьшаем размер шрифта для остальных абзацев */
-        letter-spacing: 3px; /* Уменьшаем межбуквенный интервал */
+        font-size: 1.2rem;
     }
 
     .phrase {
-        font-size: 36px; /* Уменьшаем размер шрифта для фразы */
+        font-size: 2rem;
     }
 
     .indicator-bottom p {
-        font-size: 24px; /* Уменьшаем размер шрифта для индикатора */
-    }
-
-    .indicator-bottom img {
-        height: 120px; /* Уменьшаем размер изображения индикатора */
-    }
-
-    #brief-info {
-        height: auto; /* Позволяет блоку адаптироваться к содержимому */
-        flex-direction: column; /* Переключаем в колонное направление */
-    }
-
-    .technologies-block {
-        grid-template-columns: repeat(2, minmax(80px, 1fr)); /* Уменьшаем количество колонок */
-        width: 80%; /* Уменьшаем ширину блока */
+        font-size: 1.2rem;
     }
 
     .tech-item {
-        width: 60px; /* Уменьшаем размер фона */
-        height: 60px; /* Уменьшаем высоту фона */
+        width: 3rem;
+        height: 3rem;
     }
 
     .tech-item img {
-        width: 40px; /* Уменьшаем размер иконок */
-        height: 40px; /* Уменьшаем высоту иконок */
-    }
-
-    .info-block {
-        flex-direction: column; /* Переключаем в колонное направление */
-        padding: 10px; /* Уменьшаем отступы */
+        width: 2rem;
     }
 
     .info-block-flex {
-        grid-template-columns: 1fr; /* Переключаем на одну колонку */
-    }
-
-    .info-block-flex p {
-        font-size: 20px; /* Уменьшаем размер шрифта в блоке информации */
-    }
-
-    .name-block {
-        font-size: 20px; /* Уменьшаем размер шрифта для имени */
-    }
-
-    #contact {
-        height: auto; /* Позволяет блоку адаптироваться к содержимому */
-        flex-direction: column; /* Переключаем в колонное направление */
-    }
-
-    .container {
-        padding: 10px; /* Уменьшаем отступы */
-    }
-
-    .background-div {
-        width: 90vw; /* Уменьшаем ширину фона */
-        padding-bottom: 50%; /* Пропорции для фона */
-    }
-
-    .text-block {
-        max-width: 100%; /* Уменьшаем максимальную ширину блока текста */
-    }
-
-    .text-block p:first-child {
-        font-size: 20px; /* Уменьшаем размер шрифта */
-    }
-
-    .text-block p:nth-child(2) {
-        font-size: 18px; /* Уменьшаем размер шрифта для второго абзаца */
-    }
-
-    .text-block button {
-        width: 160px; /* Уменьшаем ширину кнопки */
-        height: 50px; /* Уменьшаем высоту кнопки */
-        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
-    }
-
-    .social-media {
-        font-size: 14px; /* Уменьшаем размер шрифта в социальных сетях */
-    }
-
-    .social-item img {
-        width: 30px; /* Уменьшаем размер иконок социальных сетей */
+        grid-template-columns: 1fr;
     }
 }
 
-
-/* Другая версия медиа-запросов для еще меньших экранов */
-@media screen and (max-width: 479px) {
+@media (max-width: 480px) {
     header {
-        font-size: 16px; /* Еще больше уменьшаем размер шрифта в шапке */
-    }
-
-    header a {
-        font-size: 14px; /* Еще больше уменьшаем размер шрифта в ссылках */
-    }
-
-    #start-view {
-        height: 60vh; /* Еще больше уменьшаем высоту стартового экрана */
+        font-size: 1rem;
     }
 
     .greeting p:first-child {
-        font-size: 24px; /* Еще больше уменьшаем размер шрифта для первого абзаца */
-        letter-spacing: 8px; /* Еще больше уменьшаем межбуквенный интервал */
+        font-size: 1.5rem;
     }
 
     .greeting p:not(:first-child) {
-        font-size: 16px; /* Еще больше уменьшаем размер шрифта для остальных абзацев */
-        letter-spacing: 2px; /* Еще больше уменьшаем межбуквенный интервал */
+        font-size: 1rem;
     }
 
     .phrase {
-        font-size: 28px; /* Еще больше уменьшаем размер шрифта для фразы */
+        font-size: 1.5rem;
     }
 
     .indicator-bottom p {
-        font-size: 20px; /* Еще больше уменьшаем размер шрифта для индикатора */
-    }
-
-    .indicator-bottom img {
-        height: 100px; /* Еще больше уменьшаем размер изображения индикатора */
-    }
-
-    .technologies-block {
-        grid-template-columns: repeat(1, minmax(60px, 1fr)); /* Одна колонка для иконок */
-        width: 100%; /* Ширина блока равна ширине контейнера */
+        font-size: 1rem;
     }
 
     .tech-item {
-        width: 50px; /* Еще больше уменьшаем размер фона */
-        height: 50px; /* Еще больше уменьшаем высоту фона */
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .tech-item img {
-        width: 30px; /* Еще больше уменьшаем размер иконок */
-        height: 30px; /* Еще больше уменьшаем высоту иконок */
-    }
-
-    .info-block {
-        padding: 5px; /* Еще больше уменьшаем отступы */
+        width: 1.5rem;
     }
 
     .info-block-flex {
-        grid-template-columns: 1fr; /* Одна колонка для текста */
-    }
-
-    .info-block-flex p {
-        font-size: 16px; /* Еще больше уменьшаем размер шрифта в блоке информации */
-    }
-
-    .name-block {
-        font-size: 18px; /* Еще больше уменьшаем размер шрифта для имени */
-    }
-
-    .text-block {
-        max-width: 100%; /* Ширина текста равна ширине контейнера */
-    }
-
-    .text-block p:first-child {
-        font-size: 18px; /* Еще больше уменьшаем размер шрифта */
-    }
-
-    .text-block p:nth-child(2) {
-        font-size: 16px; /* Еще больше уменьшаем размер шрифта для второго абзаца */
-    }
-
-    .text-block button {
-        width: 140px; /* Еще больше уменьшаем ширину кнопки */
-        height: 45px; /* Еще больше уменьшаем высоту кнопки */
-        font-size: 12px; /* Еще больше уменьшаем размер шрифта кнопки */
-    }
-
-    .social-media {
-        font-size: 12px; /* Еще больше уменьшаем размер шрифта в социальных сетях */
-    }
-
-    .social-item img {
-        width: 24px; /* Еще больше уменьшаем размер иконок социальных сетей */
+        grid-template-columns: 1fr;
+        font-size: 0.8rem;
     }
 }
+

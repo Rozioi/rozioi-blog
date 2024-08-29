@@ -30,7 +30,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 22px;
+    font-size: 1.375rem; /* Размер шрифта для шапки (22px) */
     font-family: 'InterBold', sans-serif;
     z-index: 999;
 }
@@ -38,9 +38,10 @@ header {
 /* Стили для ссылок в header */
 header a {
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s; /* Уменьшаем время перехода */
     color: #e0e0e0;
-    padding: 0 15px; /* Добавляет отступы вокруг текста */
+    padding: 0 1rem; /* Отступы вокруг текста */
+    font-size: 1rem; /* Размер шрифта для ссылок */
 }
 
 /* Стили для активной ссылки */
@@ -52,7 +53,7 @@ header a.active {
 
 /* Эффекты при наведении на ссылки */
 header a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Уменьшаем масштаб при наведении */
 }
 
 /* Стили для селектора языка */
@@ -60,9 +61,9 @@ header a:hover {
     border: none;
     background: transparent;
     color: #e0e0e0;
-    font-size: 16px;
-    margin-right: 20px; /* Расстояние от правого края */
-    padding: 5px; /* Отступ внутри элемента для удобства */
+    font-size: 1rem; /* Размер шрифта для селектора языка */
+    margin-right: 1.25rem; /* Расстояние от правого края */
+    padding: 0.3rem; /* Отступ внутри элемента */
     appearance: none; /* Убирает стандартное оформление браузера */
     -webkit-appearance: none; /* Для WebKit браузеров */
     -moz-appearance: none; /* Для Firefox */
@@ -75,7 +76,7 @@ header a:hover {
     content: '▼'; /* Символ стрелки вниз */
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 0.75rem; /* Расстояние от правого края */
     transform: translateY(-50%);
     pointer-events: none; /* Не мешает кликам по селектору */
     color: #e0e0e0; /* Цвет стрелки */
@@ -99,7 +100,7 @@ main {
     align-items: flex-start; /* Выравнивание по верхнему краю */
     width: 100vw;
     height: calc(100vh - 70px); /* Учитываем высоту header */
-    padding: 20px;
+    padding: 1rem; /* Уменьшаем отступы для более компактного вида */
     background-color: #1e1e1e; /* Тёмный фон для основного контейнера */
 }
 
@@ -107,11 +108,11 @@ main {
 #projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Расстояние между проектами */
+    gap: 1.25rem; /* Расстояние между проектами */
     width: 100%;
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
-    padding: 20px;
+    padding: 1rem; /* Уменьшаем отступы внутри контейнера */
 }
 
 /* Стили для каждого проекта */
@@ -120,14 +121,14 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 10px;
+    padding: 1rem; /* Увеличиваем отступы внутри элемента */
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход для эффектов */
 }
 
 /* Эффекты при наведении на проект */
 .project:hover {
-    transform: scale(1.05); /* Увеличение при наведении */
+    transform: scale(1.03); /* Уменьшаем масштаб при наведении */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Увеличение тени при наведении */
 }
 
@@ -140,8 +141,8 @@ main {
 
 /* Стили для описания проектов */
 .project .description {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 1rem 0; /* Увеличиваем отступы для описания */
+    font-size: 1rem; /* Размер шрифта для описания */
     color: #e0e0e0; /* Светлый цвет текста для описания */
 }
 
@@ -157,51 +158,51 @@ main {
 /* Для экранов меньше 1024px */
 @media screen and (max-width: 1024px) {
     header {
-        font-size: 20px; /* Уменьшаем размер шрифта в шапке */
+        font-size: 1.25rem; /* Уменьшаем размер шрифта в шапке */
         height: 65px; /* Уменьшаем высоту шапки */
     }
 
     header a {
-        font-size: 18px; /* Уменьшаем размер шрифта в ссылках */
+        font-size: 1.125rem; /* Уменьшаем размер шрифта в ссылках */
     }
 }
 
 /* Для экранов меньше 768px */
 @media screen and (max-width: 768px) {
     header {
-        font-size: 18px; /* Уменьшаем размер шрифта в шапке */
+        font-size: 1.125rem; /* Уменьшаем размер шрифта в шапке */
         height: 60px; /* Уменьшаем высоту шапки */
     }
 
     header a {
-        font-size: 16px; /* Уменьшаем размер шрифта в ссылках */
+        font-size: 1rem; /* Уменьшаем размер шрифта в ссылках */
     }
 
     .language-selector {
-        font-size: 14px; /* Уменьшаем размер шрифта в селекторе языка */
+        font-size: 0.875rem; /* Уменьшаем размер шрифта в селекторе языка */
     }
 }
 
 /* Для экранов меньше 480px */
 @media screen and (max-width: 480px) {
     header {
-        font-size: 16px; /* Еще больше уменьшаем размер шрифта в шапке */
+        font-size: 1rem; /* Еще больше уменьшаем размер шрифта в шапке */
         height: 50px; /* Уменьшаем высоту шапки */
     }
 
     header a {
-        font-size: 14px; /* Еще больше уменьшаем размер шрифта в ссылках */
+        font-size: 0.875rem; /* Еще больше уменьшаем размер шрифта в ссылках */
     }
 
     .language-selector {
-        font-size: 12px; /* Уменьшаем размер шрифта в селекторе языка */
+        font-size: 0.75rem; /* Уменьшаем размер шрифта в селекторе языка */
     }
 
     main {
-        padding: 10px; /* Уменьшаем отступы внутри основного контейнера */
+        padding: 0.5rem; /* Уменьшаем отступы внутри основного контейнера */
     }
 
     #projects {
-        padding: 10px; /* Уменьшаем отступы внутри контейнера проектов */
+        padding: 0.5rem; /* Уменьшаем отступы внутри контейнера проектов */
     }
 }
