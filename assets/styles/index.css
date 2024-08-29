@@ -91,24 +91,35 @@ header {
     width: 100vw;
     background-color: #B9B9B9;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex; /* Flex-контейнер */
-    align-items: center; /* Вертикальное выравнивание по центру */
-    justify-content: space-between; /* Разделяет элементы на левый и правый край */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 22px;
     font-family: 'InterBold', sans-serif;
     margin-bottom: 0;
     z-index: 999;
 }
 
-header a{
-
-    text-decoration: double;
+/* Стили для ссылок в header */
+header a {
+    text-decoration: none;
     transition: .5s;
     color: white;
+    padding: 0 15px; /* Добавляет отступы вокруг текста */
 }
-header a:hover{
+
+/* Стили для активной ссылки */
+header a.active {
+    font-weight: bold;
+    color: #FFD700; /* Цвет активного элемента */
+    border-bottom: 2px solid #FFD700; /* Добавляет нижнюю границу */
+}
+
+/* Эффекты при наведении на ссылки */
+header a:hover {
     transform: scale(1.1);
 }
+
 
 header *:first-child {
     margin-left: 20px; /* Добавляем отступ от левого края, если нужно */
@@ -507,6 +518,42 @@ button:active {
     width: 100%; /* Занимает всю ширину контейнера */
 }
 
+.language-selector {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    margin-right: 20px; /* Расстояние от правого края */
+    padding: 5px; /* Отступ внутри элемента для удобства */
+    appearance: none; /* Убирает стандартное оформление браузера */
+    -webkit-appearance: none; /* Для WebKit браузеров */
+    -moz-appearance: none; /* Для Firefox */
+    outline: none; /* Убирает контур при фокусе */
+    position: relative; /* Для позиционирования псевдоэлементов */
+}
+
+/* Псевдоэлемент для стрелки выпадающего списка */
+.language-selector::after {
+    content: '▼'; /* Символ стрелки вниз */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Не мешает кликам по селектору */
+    color: white; /* Цвет стрелки */
+}
+
+/* Стиль для раскрытого состояния */
+.language-selector.open {
+    background: rgba(0, 0, 0, 0.5); /* Цвет фона при раскрытии */
+}
+
+/* Убирает фон для стандартного браузерного выпадающего списка */
+.language-selector option {
+    background: rgba(0, 0, 0, 0.5); /* Цвет фона для опций */
+}
+
+
 /* Общие стили для мобильных устройств */
 @media screen and (max-width: 767px) {
     header {
@@ -622,6 +669,7 @@ button:active {
         width: 30px; /* Уменьшаем размер иконок социальных сетей */
     }
 }
+
 
 /* Другая версия медиа-запросов для еще меньших экранов */
 @media screen and (max-width: 479px) {
