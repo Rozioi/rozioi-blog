@@ -3,115 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Общие стили */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Светлый фон */
-            color: #333; /* Темный текст для контраста */
-            text-align: center; /* Центрирование текста */
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="../assets/styles/projects.css"/>
+    <script src="../assets/transaltion.js" defer></script>
+    <script src="../scripts/projects.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Получаем текущий URL
+            const currentUrl = window.location.pathname;
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Занимает всю высоту окна */
-            padding: 20px;
-        }
+            // Получаем все ссылки в header
+            const links = document.querySelectorAll('header a');
+            console.log(links,currentUrl);
+            links.forEach(link => {
+                // Если href текущей ссылки совпадает с текущим URL
+                if (link.getAttribute('href') === currentUrl) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-        .message {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: #555; /* Цвет текста */
-            max-width: 90%; /* Ограничение ширины сообщения */
-        }
-
-        .gif {
-            max-width: 100%;
-            height: auto; /* Адаптивный размер */
-        }
-
-        .return-message {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-
-        .return-message a {
-            color: #007BFF; /* Цвет ссылки */
-            text-decoration: none; /* Без подчеркивания */
-        }
-
-        .return-message a:hover {
-            text-decoration: underline; /* Подчеркивание при наведении */
-        }
-
-        /* Медиа-запросы */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            .message {
-                font-size: 1.2em; /* Уменьшение размера шрифта для планшетов и мобильных устройств */
-                margin: 15px; /* Уменьшение отступов */
-            }
-
-            .return-message {
-                font-size: 1em; /* Уменьшение размера шрифта для планшетов и мобильных устройств */
-                margin-top: 15px; /* Уменьшение отступов */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-
-            .message {
-                font-size: 1em; /* Дополнительное уменьшение размера шрифта для маленьких экранов */
-                margin: 10px; /* Уменьшение отступов */
-            }
-
-            .return-message {
-                font-size: 0.9em; /* Дополнительное уменьшение размера шрифта для маленьких экранов */
-                margin-top: 10px; /* Уменьшение отступов */
-            }
-
-            .gif {
-                max-width: 90%; /* Ограничение ширины изображения */
-            }
-        }
-
-        @media (max-width: 320px) {
-            .container {
-                padding: 5px;
-            }
-
-            .message {
-                font-size: 0.9em; /* Дополнительное уменьшение размера шрифта для очень маленьких экранов */
-                margin: 5px; /* Уменьшение отступов */
-            }
-
-            .return-message {
-                font-size: 0.8em; /* Дополнительное уменьшение размера шрифта для очень маленьких экранов */
-                margin-top: 5px; /* Уменьшение отступов */
-            }
-
-            .gif {
-                max-width: 80%; /* Ограничение ширины изображения */
-            }
-        }
-    </style>
+    </script>
 </head>
 <body>
-<div class="container">
-    <p class="message">This page is under construction. We are working hard to bring it to you soon!</p>
-    <img src="../assets/file/programming.gif" alt="Programmer coding" class="gif">
-    <p class="return-message">Please <a href="javascript:history.back()">return to the previous page</a>.</p>
-</div>
+<header>
+    <a href="../index.html" >Rozioi</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./projects.html" class="active">Projects</a>
+    <a href="./about.html">About me</a>
+    <select id="language-selector" class="language-selector">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="be">Беларуская</option>
+    </select>
+    <a href="#contact">Contact</a>
+</header>
+<main>
+    <section id="projects">
+        <div class="project">
+            <img src="../assets/file/rozMessanger.jpg" alt="Project 1">
+            <p class="description">RozMessanger is a messaging app similar to Telegram, designed to provide a robust and user-friendly communication experience. Although still under development, it aims to offer features such as secure messaging, group chats, and multimedia sharing. Currently, it is a work in progress and lacks some advanced functionalities, but the core messaging features are in place and continuously evolving.</p>
+        </div>
+<!--        <div class="project">-->
+<!--            <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">-->
+<!--            <p class="description">Description for Project 2. This project involves several interesting features.</p>-->
+<!--        </div>-->
+<!--        <div class="project">-->
+<!--            <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3">-->
+<!--            <p class="description">Description for Project 3. Here we explore advanced topics and innovative solutions.</p>-->
+<!--        </div>-->
+    </section>
+
+</main>
 </body>
 </html>

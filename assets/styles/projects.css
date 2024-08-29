@@ -1,0 +1,207 @@
+/* Сброс стилей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили для страницы */
+body {
+    overflow-x: hidden; /* Убирает видимые полосы прокрутки */
+    background-color: #1e1e1e; /* Тёмный фон для всего тела страницы */
+    color: #e0e0e0; /* Светлый цвет текста */
+    font-family: Arial, sans-serif;
+}
+
+/* Убираем стандартное оформление прокрутки */
+body::-webkit-scrollbar {
+    display: none; /* Убирает видимые полосы прокрутки для WebKit браузеров */
+}
+
+/* Стили для header */
+header {
+    position: fixed;
+    top: 0; /* Обеспечивает, что header всегда остается вверху */
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: #333; /* Тёмный фон для шапки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-family: 'InterBold', sans-serif;
+    z-index: 999;
+}
+
+/* Стили для ссылок в header */
+header a {
+    text-decoration: none;
+    transition: 0.5s;
+    color: #e0e0e0;
+    padding: 0 15px; /* Добавляет отступы вокруг текста */
+}
+
+/* Стили для активной ссылки */
+header a.active {
+    font-weight: bold;
+    color: #FFD700; /* Цвет активного элемента */
+    border-bottom: 2px solid #FFD700; /* Добавляет нижнюю границу */
+}
+
+/* Эффекты при наведении на ссылки */
+header a:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для селектора языка */
+.language-selector {
+    border: none;
+    background: transparent;
+    color: #e0e0e0;
+    font-size: 16px;
+    margin-right: 20px; /* Расстояние от правого края */
+    padding: 5px; /* Отступ внутри элемента для удобства */
+    appearance: none; /* Убирает стандартное оформление браузера */
+    -webkit-appearance: none; /* Для WebKit браузеров */
+    -moz-appearance: none; /* Для Firefox */
+    outline: none; /* Убирает контур при фокусе */
+    position: relative; /* Для позиционирования псевдоэлементов */
+}
+
+/* Псевдоэлемент для стрелки выпадающего списка */
+.language-selector::after {
+    content: '▼'; /* Символ стрелки вниз */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Не мешает кликам по селектору */
+    color: #e0e0e0; /* Цвет стрелки */
+}
+
+/* Стиль для раскрытого состояния */
+.language-selector.open {
+    background: rgba(0, 0, 0, 0.7); /* Цвет фона при раскрытии */
+}
+
+/* Убирает фон для стандартного браузерного выпадающего списка */
+.language-selector option {
+    background: rgba(0, 0, 0, 0.7); /* Цвет фона для опций */
+}
+
+/* Основной контейнер для проектов */
+main {
+    margin-top: 70px; /* Сдвигает контент вниз под header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    width: 100vw;
+    height: calc(100vh - 70px); /* Учитываем высоту header */
+    padding: 20px;
+    background-color: #1e1e1e; /* Тёмный фон для основного контейнера */
+}
+
+/* Контейнер для всех проектов */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Расстояние между проектами */
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 20px;
+}
+
+/* Стили для каждого проекта */
+.project {
+    background-color: #2a2a2a; /* Темный фон для каждого проекта */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход для эффектов */
+}
+
+/* Эффекты при наведении на проект */
+.project:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Увеличение тени при наведении */
+}
+
+/* Стили для изображений проектов */
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Стили для описания проектов */
+.project .description {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #e0e0e0; /* Светлый цвет текста для описания */
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Для экранов меньше 1200px */
+@media screen and (max-width: 1200px) {
+    #projects {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Уменьшаем минимальную ширину колонок */
+    }
+}
+
+/* Для экранов меньше 1024px */
+@media screen and (max-width: 1024px) {
+    header {
+        font-size: 20px; /* Уменьшаем размер шрифта в шапке */
+        height: 65px; /* Уменьшаем высоту шапки */
+    }
+
+    header a {
+        font-size: 18px; /* Уменьшаем размер шрифта в ссылках */
+    }
+}
+
+/* Для экранов меньше 768px */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 18px; /* Уменьшаем размер шрифта в шапке */
+        height: 60px; /* Уменьшаем высоту шапки */
+    }
+
+    header a {
+        font-size: 16px; /* Уменьшаем размер шрифта в ссылках */
+    }
+
+    .language-selector {
+        font-size: 14px; /* Уменьшаем размер шрифта в селекторе языка */
+    }
+}
+
+/* Для экранов меньше 480px */
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта в шапке */
+        height: 50px; /* Уменьшаем высоту шапки */
+    }
+
+    header a {
+        font-size: 14px; /* Еще больше уменьшаем размер шрифта в ссылках */
+    }
+
+    .language-selector {
+        font-size: 12px; /* Уменьшаем размер шрифта в селекторе языка */
+    }
+
+    main {
+        padding: 10px; /* Уменьшаем отступы внутри основного контейнера */
+    }
+
+    #projects {
+        padding: 10px; /* Уменьшаем отступы внутри контейнера проектов */
+    }
+}
