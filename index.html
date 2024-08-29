@@ -5,6 +5,7 @@
     <title>Rozioi</title>
     <link rel="stylesheet" href="assets/styles/index.css">
     <script src="./scripts/index.js" defer></script>
+    <script src="/assets/transaltion.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -13,6 +14,21 @@
                 speedAsDuration: true // Использовать продолжительность скролла как скорость
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Получаем текущий URL
+            const currentUrl = window.location.pathname;
+
+            // Получаем все ссылки в header
+            const links = document.querySelectorAll('header a');
+
+            links.forEach(link => {
+                // Если href текущей ссылки совпадает с текущим URL
+                if (link.getAttribute('href') === currentUrl) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
     </script>
 </head>
 <body>
@@ -22,15 +38,18 @@
 <div>
 
     <header>
-        <a href="index.html">Rozioi</a>
-
+        <a href="index.html" class="active">Rozioi</a>
         <a href="./pages/blog.html">Blog</a>
         <a href="./pages/projects.html">Projects</a>
         <a href="./pages/about.html">About me</a>
+        <select id="language-selector" class="language-selector">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="be">Беларуская</option>
+        </select>
         <a href="#contact">Contact</a>
-
-
     </header>
+
     <main >
         <section id="start-view">
             <div class="greeting">
